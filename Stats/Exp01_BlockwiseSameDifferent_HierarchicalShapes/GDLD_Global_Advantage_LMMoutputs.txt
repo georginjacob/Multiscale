@@ -1,0 +1,463 @@
+
+> print("*************************** ANOVA ***********************************")
+[1] "*************************** ANOVA ***********************************"
+
+> anova(LMM_BIM_invRT)
+Type III Analysis of Variance Table with Satterthwaite's method
+                Sum Sq Mean Sq NumDF  DenDF F value    Pr(>F)    
+Block            7.618  7.6176     1 8602.2 97.7552 < 2.2e-16 ***
+ImagePair       85.698  0.5870   146 8602.0  7.5324 < 2.2e-16 ***
+Block:ImagePair 40.816  0.2796   146 8602.0  3.5876 < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> print("*************************** Summary ***********************************")
+[1] "*************************** Summary ***********************************"
+
+> summary(LMM_BIM_invRT)
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: invRT ~ Block * ImagePair + (1 | Subject)
+   Data: data_gdld
+
+     AIC      BIC   logLik deviance df.resid 
+  3128.7   5219.0  -1268.4   2536.7     8322 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.0514 -0.6787  0.0399  0.6689  6.5156 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Subject  (Intercept) 0.01381  0.1175  
+ Residual             0.07793  0.2792  
+Number of obs: 8618, groups:  Subject, 16
+
+Fixed effects:
+                      Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)          1.455e+00  2.954e-02  1.600e+01  49.269  < 2e-16 ***
+Block1               2.979e-02  3.013e-03  8.602e+03   9.887  < 2e-16 ***
+ImagePair1          -1.729e-01  3.592e-02  8.602e+03  -4.812 1.52e-06 ***
+ImagePair2          -9.717e-02  3.655e-02  8.602e+03  -2.658 0.007864 ** 
+ImagePair3          -4.252e-04  3.592e-02  8.602e+03  -0.012 0.990555    
+ImagePair4          -1.872e-02  3.567e-02  8.602e+03  -0.525 0.599716    
+ImagePair5           8.048e-02  3.563e-02  8.602e+03   2.259 0.023926 *  
+ImagePair6           7.600e-02  3.751e-02  8.602e+03   2.026 0.042810 *  
+ImagePair7           1.231e-01  3.895e-02  8.602e+03   3.161 0.001580 ** 
+ImagePair8          -2.004e-01  3.685e-02  8.602e+03  -5.438 5.54e-08 ***
+ImagePair9           9.970e-02  3.592e-02  8.602e+03   2.776 0.005523 ** 
+ImagePair10          1.228e-01  3.653e-02  8.602e+03   3.361 0.000779 ***
+ImagePair11         -2.519e-02  3.627e-02  8.602e+03  -0.694 0.487434    
+ImagePair12          8.700e-02  3.662e-02  8.602e+03   2.376 0.017525 *  
+ImagePair13         -1.835e-01  3.534e-02  8.602e+03  -5.193 2.12e-07 ***
+ImagePair14         -3.780e-04  3.685e-02  8.602e+03  -0.010 0.991816    
+ImagePair15         -1.035e-01  3.592e-02  8.602e+03  -2.882 0.003959 ** 
+ImagePair16         -7.894e-02  3.563e-02  8.602e+03  -2.216 0.026744 *  
+ImagePair17         -1.353e-01  3.563e-02  8.602e+03  -3.796 0.000148 ***
+ImagePair18          9.479e-02  3.796e-02  8.602e+03   2.497 0.012534 *  
+ImagePair19          1.455e-01  3.686e-02  8.602e+03   3.948 7.95e-05 ***
+ImagePair20         -4.913e-02  3.594e-02  8.602e+03  -1.367 0.171630    
+ImagePair21         -4.814e-02  3.720e-02  8.602e+03  -1.294 0.195640    
+ImagePair22         -7.266e-02  3.685e-02  8.602e+03  -1.972 0.048695 *  
+ImagePair23         -5.990e-02  3.563e-02  8.602e+03  -1.681 0.092766 .  
+ImagePair24         -1.031e-01  3.627e-02  8.602e+03  -2.843 0.004484 ** 
+ImagePair25         -9.074e-02  3.699e-02  8.602e+03  -2.453 0.014187 *  
+ImagePair26         -2.680e-02  3.673e-02  8.602e+03  -0.730 0.465663    
+ImagePair27         -9.554e-03  3.653e-02  8.602e+03  -0.262 0.793680    
+ImagePair28         -3.574e-02  3.536e-02  8.602e+03  -1.011 0.312164    
+ImagePair29         -1.867e-02  3.567e-02  8.602e+03  -0.523 0.600796    
+ImagePair30         -5.647e-02  3.594e-02  8.602e+03  -1.571 0.116197    
+ImagePair31          4.318e-02  3.653e-02  8.602e+03   1.182 0.237249    
+ImagePair32         -3.161e-02  3.727e-02  8.602e+03  -0.848 0.396418    
+ImagePair33         -1.112e-02  3.653e-02  8.602e+03  -0.304 0.760912    
+ImagePair34          1.792e-01  3.690e-02  8.602e+03   4.857 1.21e-06 ***
+ImagePair35          9.323e-02  3.788e-02  8.602e+03   2.461 0.013877 *  
+ImagePair36          3.213e-02  3.727e-02  8.602e+03   0.862 0.388699    
+ImagePair37         -9.816e-03  3.563e-02  8.602e+03  -0.275 0.782941    
+ImagePair38         -4.379e-02  3.563e-02  8.602e+03  -1.229 0.219149    
+ImagePair39          1.739e-01  3.827e-02  8.602e+03   4.544 5.59e-06 ***
+ImagePair40          1.307e-01  3.717e-02  8.602e+03   3.517 0.000439 ***
+ImagePair41          7.003e-03  3.506e-02  8.602e+03   0.200 0.841704    
+ImagePair42         -4.243e-02  3.686e-02  8.602e+03  -1.151 0.249685    
+ImagePair43          1.088e-01  3.653e-02  8.602e+03   2.978 0.002907 ** 
+ImagePair44         -7.868e-02  3.727e-02  8.602e+03  -2.111 0.034820 *  
+ImagePair45         -5.309e-02  3.534e-02  8.602e+03  -1.502 0.133072    
+ImagePair46         -4.914e-02  3.662e-02  8.602e+03  -1.342 0.179678    
+ImagePair47         -3.622e-02  3.623e-02  8.602e+03  -1.000 0.317448    
+ImagePair48          6.399e-02  3.563e-02  8.602e+03   1.796 0.072531 .  
+ImagePair49         -2.157e-02  3.655e-02  8.602e+03  -0.590 0.555197    
+ImagePair50         -1.126e-01  3.534e-02  8.602e+03  -3.185 0.001452 ** 
+ImagePair51         -1.790e-01  3.592e-02  8.602e+03  -4.984 6.37e-07 ***
+ImagePair52          2.432e-02  3.600e-02  8.602e+03   0.676 0.499322    
+ImagePair53          1.180e-01  3.623e-02  8.602e+03   3.257 0.001130 ** 
+ImagePair54          3.041e-02  3.623e-02  8.602e+03   0.839 0.401237    
+ImagePair55         -2.266e-03  3.563e-02  8.602e+03  -0.064 0.949292    
+ImagePair56          1.258e-02  3.506e-02  8.602e+03   0.359 0.719700    
+ImagePair57         -3.095e-02  3.623e-02  8.602e+03  -0.854 0.392908    
+ImagePair58         -8.986e-02  3.567e-02  8.602e+03  -2.519 0.011781 *  
+ImagePair59         -7.980e-02  3.592e-02  8.602e+03  -2.222 0.026339 *  
+ImagePair60          3.019e-02  3.686e-02  8.602e+03   0.819 0.412765    
+ImagePair61          1.587e-01  3.788e-02  8.602e+03   4.191 2.81e-05 ***
+ImagePair62         -4.600e-02  3.594e-02  8.602e+03  -1.280 0.200611    
+ImagePair63         -2.921e-02  3.563e-02  8.602e+03  -0.820 0.412374    
+ImagePair64          3.611e-02  3.685e-02  8.602e+03   0.980 0.327254    
+ImagePair65         -7.938e-02  3.627e-02  8.602e+03  -2.189 0.028657 *  
+ImagePair66          1.120e-01  3.752e-02  8.602e+03   2.984 0.002848 ** 
+ImagePair67          6.099e-02  3.656e-02  8.602e+03   1.669 0.095247 .  
+ImagePair68         -4.374e-02  3.685e-02  8.602e+03  -1.187 0.235288    
+ImagePair69          8.666e-02  3.690e-02  8.602e+03   2.348 0.018872 *  
+ImagePair70         -1.093e-02  3.685e-02  8.602e+03  -0.296 0.766885    
+ImagePair71         -1.556e-02  3.592e-02  8.602e+03  -0.433 0.664939    
+ImagePair72         -9.207e-02  3.592e-02  8.602e+03  -2.563 0.010393 *  
+ImagePair73          9.871e-03  3.563e-02  8.602e+03   0.277 0.781774    
+ImagePair74          8.070e-02  3.592e-02  8.602e+03   2.247 0.024691 *  
+ImagePair75         -1.449e-01  3.685e-02  8.602e+03  -3.931 8.51e-05 ***
+ImagePair76          3.984e-02  3.699e-02  8.602e+03   1.077 0.281505    
+ImagePair77          1.607e-02  3.623e-02  8.602e+03   0.444 0.657276    
+ImagePair78         -3.159e-02  3.653e-02  8.602e+03  -0.865 0.387281    
+ImagePair79          1.036e-01  3.655e-02  8.602e+03   2.833 0.004617 ** 
+ImagePair80          1.012e-01  3.720e-02  8.602e+03   2.720 0.006551 ** 
+ImagePair81          3.673e-02  3.673e-02  8.602e+03   1.000 0.317264    
+ImagePair82          2.696e-02  3.594e-02  8.602e+03   0.750 0.453190    
+ImagePair83         -1.389e-01  3.536e-02  8.602e+03  -3.927 8.65e-05 ***
+ImagePair84          9.091e-03  3.685e-02  8.602e+03   0.247 0.805167    
+ImagePair85          1.300e-01  3.821e-02  8.602e+03   3.402 0.000671 ***
+ImagePair86          5.299e-02  3.534e-02  8.602e+03   1.499 0.133784    
+ImagePair87          1.011e-02  3.623e-02  8.602e+03   0.279 0.780241    
+ImagePair88          2.422e-02  3.727e-02  8.602e+03   0.650 0.515789    
+ImagePair89          7.556e-03  3.751e-02  8.602e+03   0.201 0.840366    
+ImagePair90          4.839e-02  3.567e-02  8.602e+03   1.357 0.174952    
+ImagePair91         -1.084e-01  3.534e-02  8.602e+03  -3.068 0.002162 ** 
+ImagePair92         -2.986e-01  3.563e-02  8.602e+03  -8.379  < 2e-16 ***
+ImagePair93          3.349e-02  3.563e-02  8.602e+03   0.940 0.347326    
+ImagePair94         -1.857e-02  3.600e-02  8.602e+03  -0.516 0.605901    
+ImagePair95         -1.160e-01  3.623e-02  8.602e+03  -3.202 0.001368 ** 
+ImagePair96          8.209e-02  3.594e-02  8.602e+03   2.284 0.022401 *  
+ImagePair97          1.001e-02  3.627e-02  8.602e+03   0.276 0.782614    
+ImagePair98          2.663e-03  3.690e-02  8.602e+03   0.072 0.942472    
+ImagePair99         -7.713e-02  3.623e-02  8.602e+03  -2.129 0.033281 *  
+ImagePair100         1.127e-01  3.662e-02  8.602e+03   3.077 0.002099 ** 
+ImagePair101         4.219e-02  3.756e-02  8.602e+03   1.123 0.261375    
+ImagePair102         1.274e-01  3.592e-02  8.602e+03   3.547 0.000392 ***
+ImagePair103         1.313e-01  3.752e-02  8.602e+03   3.499 0.000470 ***
+ImagePair104         4.965e-02  3.623e-02  8.602e+03   1.371 0.170550    
+ImagePair105         8.150e-02  3.623e-02  8.602e+03   2.250 0.024488 *  
+ImagePair106         1.005e-01  3.720e-02  8.602e+03   2.703 0.006893 ** 
+ImagePair107         7.518e-02  3.623e-02  8.602e+03   2.075 0.038018 *  
+ImagePair108        -6.833e-02  3.594e-02  8.602e+03  -1.901 0.057317 .  
+ImagePair109         1.343e-01  3.594e-02  8.602e+03   3.738 0.000187 ***
+ImagePair110         1.303e-01  3.653e-02  8.602e+03   3.568 0.000362 ***
+ImagePair111         1.088e-01  3.536e-02  8.602e+03   3.078 0.002092 ** 
+ImagePair112         1.882e-01  3.685e-02  8.602e+03   5.107 3.35e-07 ***
+ImagePair113         1.456e-01  3.662e-02  8.602e+03   3.975 7.09e-05 ***
+ImagePair114         1.627e-01  3.655e-02  8.602e+03   4.452 8.62e-06 ***
+ImagePair115         1.913e-01  3.788e-02  8.602e+03   5.050 4.50e-07 ***
+ImagePair116         7.535e-02  3.653e-02  8.602e+03   2.063 0.039176 *  
+ImagePair117         2.201e-02  3.623e-02  8.602e+03   0.608 0.543475    
+ImagePair118         4.929e-02  3.506e-02  8.602e+03   1.406 0.159834    
+ImagePair119         1.346e-01  3.623e-02  8.602e+03   3.717 0.000203 ***
+ImagePair120         1.436e-01  3.785e-02  8.602e+03   3.793 0.000150 ***
+ImagePair121         1.984e-03  3.506e-02  8.602e+03   0.057 0.954882    
+ImagePair122         2.683e-02  3.592e-02  8.602e+03   0.747 0.455124    
+ImagePair123        -4.012e-02  3.623e-02  8.602e+03  -1.107 0.268112    
+ImagePair124         8.928e-02  3.690e-02  8.602e+03   2.419 0.015564 *  
+ImagePair125         7.508e-02  3.563e-02  8.602e+03   2.107 0.035137 *  
+ImagePair126        -1.245e-02  3.623e-02  8.602e+03  -0.344 0.731028    
+ImagePair127        -1.546e-02  3.592e-02  8.602e+03  -0.430 0.666888    
+ImagePair128         3.511e-02  3.788e-02  8.602e+03   0.927 0.354038    
+ImagePair129        -6.766e-02  3.655e-02  8.602e+03  -1.851 0.064188 .  
+ImagePair130         2.772e-04  3.594e-02  8.602e+03   0.008 0.993846    
+ImagePair131         1.039e-01  3.653e-02  8.602e+03   2.844 0.004469 ** 
+ImagePair132        -9.862e-02  3.623e-02  8.602e+03  -2.722 0.006501 ** 
+ImagePair133         9.235e-02  3.600e-02  8.602e+03   2.565 0.010328 *  
+ImagePair134         2.548e-02  3.673e-02  8.602e+03   0.694 0.487792    
+ImagePair135        -1.394e-01  3.563e-02  8.602e+03  -3.913 9.19e-05 ***
+ImagePair136        -2.743e-01  3.655e-02  8.602e+03  -7.505 6.75e-14 ***
+ImagePair137        -2.574e-02  3.592e-02  8.602e+03  -0.717 0.473633    
+ImagePair138         7.198e-02  3.594e-02  8.602e+03   2.003 0.045243 *  
+ImagePair139        -1.729e-01  3.563e-02  8.602e+03  -4.852 1.24e-06 ***
+ImagePair140        -1.260e-01  3.860e-02  8.602e+03  -3.265 0.001098 ** 
+ImagePair141        -6.870e-02  3.623e-02  8.602e+03  -1.896 0.057931 .  
+ImagePair142        -1.963e-01  3.623e-02  8.602e+03  -5.418 6.19e-08 ***
+ImagePair143        -1.401e-01  3.627e-02  8.602e+03  -3.862 0.000113 ***
+ImagePair144        -2.468e-01  3.627e-02  8.602e+03  -6.804 1.08e-11 ***
+ImagePair145        -1.307e-01  3.655e-02  8.602e+03  -3.575 0.000352 ***
+ImagePair146        -1.284e-01  3.600e-02  8.602e+03  -3.567 0.000362 ***
+Block1:ImagePair1    9.058e-02  3.592e-02  8.602e+03   2.522 0.011694 *  
+Block1:ImagePair2    3.998e-02  3.655e-02  8.602e+03   1.094 0.274074    
+Block1:ImagePair3    3.673e-02  3.592e-02  8.602e+03   1.022 0.306624    
+Block1:ImagePair4    9.521e-02  3.567e-02  8.602e+03   2.669 0.007621 ** 
+Block1:ImagePair5    1.696e-02  3.563e-02  8.602e+03   0.476 0.634155    
+Block1:ImagePair6    1.267e-02  3.751e-02  8.602e+03   0.338 0.735616    
+Block1:ImagePair7    3.440e-02  3.896e-02  8.602e+03   0.883 0.377187    
+Block1:ImagePair8    7.949e-02  3.685e-02  8.602e+03   2.157 0.031035 *  
+Block1:ImagePair9   -8.655e-02  3.592e-02  8.602e+03  -2.409 0.015997 *  
+Block1:ImagePair10  -1.406e-02  3.653e-02  8.602e+03  -0.385 0.700398    
+Block1:ImagePair11   3.309e-03  3.627e-02  8.602e+03   0.091 0.927314    
+Block1:ImagePair12   8.836e-02  3.662e-02  8.602e+03   2.413 0.015842 *  
+Block1:ImagePair13   1.744e-01  3.534e-02  8.602e+03   4.934 8.19e-07 ***
+Block1:ImagePair14  -3.503e-02  3.686e-02  8.602e+03  -0.950 0.341921    
+Block1:ImagePair15  -5.504e-02  3.592e-02  8.602e+03  -1.532 0.125520    
+Block1:ImagePair16  -9.588e-02  3.563e-02  8.602e+03  -2.691 0.007137 ** 
+Block1:ImagePair17   2.136e-02  3.563e-02  8.602e+03   0.599 0.548899    
+Block1:ImagePair18  -4.624e-02  3.796e-02  8.602e+03  -1.218 0.223251    
+Block1:ImagePair19   1.382e-02  3.685e-02  8.602e+03   0.375 0.707637    
+Block1:ImagePair20   3.280e-02  3.594e-02  8.602e+03   0.913 0.361512    
+Block1:ImagePair21   1.825e-01  3.720e-02  8.602e+03   4.906 9.49e-07 ***
+Block1:ImagePair22  -9.046e-03  3.685e-02  8.602e+03  -0.245 0.806116    
+Block1:ImagePair23  -2.677e-02  3.563e-02  8.602e+03  -0.751 0.452432    
+Block1:ImagePair24  -1.104e-01  3.627e-02  8.602e+03  -3.045 0.002334 ** 
+Block1:ImagePair25  -1.604e-01  3.699e-02  8.602e+03  -4.336 1.47e-05 ***
+Block1:ImagePair26  -1.493e-01  3.673e-02  8.602e+03  -4.066 4.83e-05 ***
+Block1:ImagePair27   8.098e-02  3.653e-02  8.602e+03   2.217 0.026660 *  
+Block1:ImagePair28   1.452e-01  3.536e-02  8.602e+03   4.107 4.05e-05 ***
+Block1:ImagePair29   5.201e-02  3.567e-02  8.602e+03   1.458 0.144867    
+Block1:ImagePair30  -1.396e-02  3.594e-02  8.602e+03  -0.388 0.697804    
+Block1:ImagePair31   2.206e-02  3.653e-02  8.602e+03   0.604 0.545865    
+Block1:ImagePair32   1.078e-01  3.727e-02  8.602e+03   2.892 0.003833 ** 
+Block1:ImagePair33  -7.001e-02  3.653e-02  8.602e+03  -1.916 0.055345 .  
+Block1:ImagePair34   2.241e-02  3.690e-02  8.602e+03   0.607 0.543709    
+Block1:ImagePair35  -8.297e-02  3.788e-02  8.602e+03  -2.191 0.028511 *  
+Block1:ImagePair36  -7.435e-02  3.727e-02  8.602e+03  -1.995 0.046075 *  
+Block1:ImagePair37   9.538e-02  3.563e-02  8.602e+03   2.677 0.007444 ** 
+Block1:ImagePair38   1.626e-02  3.563e-02  8.602e+03   0.456 0.648252    
+Block1:ImagePair39  -2.581e-02  3.827e-02  8.602e+03  -0.674 0.500103    
+Block1:ImagePair40  -3.625e-02  3.717e-02  8.602e+03  -0.975 0.329537    
+Block1:ImagePair41  -1.088e-01  3.506e-02  8.602e+03  -3.103 0.001919 ** 
+Block1:ImagePair42  -6.559e-02  3.685e-02  8.602e+03  -1.780 0.075127 .  
+Block1:ImagePair43  -3.565e-02  3.653e-02  8.602e+03  -0.976 0.329213    
+Block1:ImagePair44  -3.435e-02  3.727e-02  8.602e+03  -0.922 0.356682    
+Block1:ImagePair45  -5.052e-02  3.534e-02  8.602e+03  -1.430 0.152854    
+Block1:ImagePair46   1.647e-02  3.662e-02  8.602e+03   0.450 0.652838    
+Block1:ImagePair47   1.981e-02  3.623e-02  8.602e+03   0.547 0.584542    
+Block1:ImagePair48  -1.180e-01  3.563e-02  8.602e+03  -3.311 0.000935 ***
+Block1:ImagePair49   5.742e-02  3.655e-02  8.602e+03   1.571 0.116226    
+Block1:ImagePair50  -4.284e-02  3.534e-02  8.602e+03  -1.212 0.225414    
+Block1:ImagePair51   8.511e-02  3.592e-02  8.602e+03   2.369 0.017841 *  
+Block1:ImagePair52  -1.492e-02  3.600e-02  8.602e+03  -0.415 0.678497    
+Block1:ImagePair53  -2.636e-03  3.623e-02  8.602e+03  -0.073 0.941986    
+Block1:ImagePair54  -6.158e-02  3.623e-02  8.602e+03  -1.700 0.089191 .  
+Block1:ImagePair55   4.168e-02  3.563e-02  8.602e+03   1.170 0.242081    
+Block1:ImagePair56  -9.895e-03  3.506e-02  8.602e+03  -0.282 0.777793    
+Block1:ImagePair57   6.413e-02  3.623e-02  8.602e+03   1.770 0.076731 .  
+Block1:ImagePair58   1.098e-01  3.567e-02  8.602e+03   3.078 0.002087 ** 
+Block1:ImagePair59   4.615e-02  3.592e-02  8.602e+03   1.285 0.198926    
+Block1:ImagePair60  -5.984e-02  3.685e-02  8.602e+03  -1.624 0.104432    
+Block1:ImagePair61  -2.533e-02  3.788e-02  8.602e+03  -0.669 0.503727    
+Block1:ImagePair62  -3.546e-02  3.594e-02  8.602e+03  -0.987 0.323843    
+Block1:ImagePair63  -3.837e-02  3.563e-02  8.602e+03  -1.077 0.281610    
+Block1:ImagePair64   9.209e-02  3.686e-02  8.602e+03   2.499 0.012489 *  
+Block1:ImagePair65   2.035e-02  3.627e-02  8.602e+03   0.561 0.574797    
+Block1:ImagePair66   1.015e-02  3.751e-02  8.602e+03   0.270 0.786798    
+Block1:ImagePair67   3.167e-02  3.655e-02  8.602e+03   0.866 0.386280    
+Block1:ImagePair68   2.963e-02  3.686e-02  8.602e+03   0.804 0.421409    
+Block1:ImagePair69  -3.175e-03  3.690e-02  8.602e+03  -0.086 0.931428    
+Block1:ImagePair70   5.744e-02  3.685e-02  8.602e+03   1.559 0.119101    
+Block1:ImagePair71   7.116e-02  3.592e-02  8.602e+03   1.981 0.047609 *  
+Block1:ImagePair72   9.397e-02  3.592e-02  8.602e+03   2.616 0.008905 ** 
+Block1:ImagePair73  -2.114e-02  3.563e-02  8.602e+03  -0.593 0.552998    
+Block1:ImagePair74   4.115e-02  3.592e-02  8.602e+03   1.146 0.251967    
+Block1:ImagePair75  -2.554e-02  3.686e-02  8.602e+03  -0.693 0.488317    
+Block1:ImagePair76   6.826e-02  3.699e-02  8.602e+03   1.845 0.065009 .  
+Block1:ImagePair77  -4.539e-02  3.623e-02  8.602e+03  -1.253 0.210296    
+Block1:ImagePair78  -3.773e-02  3.653e-02  8.602e+03  -1.033 0.301709    
+Block1:ImagePair79   1.273e-02  3.655e-02  8.602e+03   0.348 0.727552    
+Block1:ImagePair80  -4.005e-02  3.720e-02  8.602e+03  -1.077 0.281636    
+Block1:ImagePair81   1.207e-01  3.673e-02  8.602e+03   3.285 0.001023 ** 
+Block1:ImagePair82   3.941e-02  3.594e-02  8.602e+03   1.096 0.272893    
+Block1:ImagePair83  -5.241e-02  3.536e-02  8.602e+03  -1.482 0.138309    
+Block1:ImagePair84   2.298e-02  3.685e-02  8.602e+03   0.624 0.532968    
+Block1:ImagePair85   1.141e-02  3.821e-02  8.602e+03   0.299 0.765169    
+Block1:ImagePair86   1.034e-02  3.534e-02  8.602e+03   0.293 0.769834    
+Block1:ImagePair87  -2.636e-02  3.623e-02  8.602e+03  -0.728 0.466798    
+Block1:ImagePair88   8.343e-02  3.727e-02  8.602e+03   2.239 0.025209 *  
+Block1:ImagePair89   1.173e-01  3.751e-02  8.602e+03   3.126 0.001778 ** 
+Block1:ImagePair90  -8.918e-02  3.567e-02  8.602e+03  -2.500 0.012433 *  
+Block1:ImagePair91  -1.548e-01  3.534e-02  8.602e+03  -4.379 1.21e-05 ***
+Block1:ImagePair92  -9.251e-02  3.563e-02  8.602e+03  -2.596 0.009438 ** 
+Block1:ImagePair93   4.142e-02  3.563e-02  8.602e+03   1.162 0.245115    
+Block1:ImagePair94  -5.985e-02  3.600e-02  8.602e+03  -1.662 0.096458 .  
+Block1:ImagePair95  -4.629e-02  3.623e-02  8.602e+03  -1.278 0.201393    
+Block1:ImagePair96   1.841e-02  3.594e-02  8.602e+03   0.512 0.608496    
+Block1:ImagePair97  -2.173e-02  3.627e-02  8.602e+03  -0.599 0.549185    
+Block1:ImagePair98   1.159e-02  3.690e-02  8.602e+03   0.314 0.753516    
+Block1:ImagePair99   7.461e-04  3.623e-02  8.602e+03   0.021 0.983570    
+Block1:ImagePair100 -1.069e-01  3.662e-02  8.602e+03  -2.918 0.003527 ** 
+Block1:ImagePair101 -4.103e-02  3.756e-02  8.602e+03  -1.092 0.274694    
+Block1:ImagePair102 -7.418e-02  3.592e-02  8.602e+03  -2.065 0.038955 *  
+Block1:ImagePair103  3.785e-02  3.752e-02  8.602e+03   1.009 0.312988    
+Block1:ImagePair104 -5.294e-02  3.623e-02  8.602e+03  -1.461 0.143972    
+Block1:ImagePair105 -8.566e-02  3.623e-02  8.602e+03  -2.364 0.018083 *  
+Block1:ImagePair106 -3.739e-02  3.720e-02  8.602e+03  -1.005 0.314831    
+Block1:ImagePair107 -8.929e-02  3.623e-02  8.602e+03  -2.465 0.013733 *  
+Block1:ImagePair108 -1.054e-01  3.594e-02  8.602e+03  -2.932 0.003380 ** 
+Block1:ImagePair109 -5.960e-02  3.594e-02  8.602e+03  -1.658 0.097287 .  
+Block1:ImagePair110 -2.808e-03  3.653e-02  8.602e+03  -0.077 0.938727    
+Block1:ImagePair111  8.412e-02  3.536e-02  8.602e+03   2.379 0.017380 *  
+Block1:ImagePair112 -1.796e-02  3.685e-02  8.602e+03  -0.487 0.626124    
+Block1:ImagePair113 -4.379e-02  3.662e-02  8.602e+03  -1.196 0.231786    
+Block1:ImagePair114  2.372e-02  3.655e-02  8.602e+03   0.649 0.516495    
+Block1:ImagePair115 -8.679e-02  3.788e-02  8.602e+03  -2.291 0.021969 *  
+Block1:ImagePair116  1.945e-02  3.653e-02  8.602e+03   0.532 0.594483    
+Block1:ImagePair117  4.770e-02  3.623e-02  8.602e+03   1.317 0.187942    
+Block1:ImagePair118 -1.524e-02  3.506e-02  8.602e+03  -0.435 0.663849    
+Block1:ImagePair119 -5.929e-02  3.623e-02  8.602e+03  -1.637 0.101764    
+Block1:ImagePair120 -1.401e-02  3.785e-02  8.602e+03  -0.370 0.711276    
+Block1:ImagePair121 -3.840e-02  3.506e-02  8.602e+03  -1.095 0.273507    
+Block1:ImagePair122 -3.807e-02  3.592e-02  8.602e+03  -1.060 0.289222    
+Block1:ImagePair123 -1.145e-01  3.623e-02  8.602e+03  -3.161 0.001579 ** 
+Block1:ImagePair124 -9.735e-02  3.690e-02  8.602e+03  -2.638 0.008347 ** 
+Block1:ImagePair125 -2.277e-02  3.563e-02  8.602e+03  -0.639 0.522857    
+Block1:ImagePair126  2.458e-02  3.623e-02  8.602e+03   0.679 0.497415    
+Block1:ImagePair127 -4.177e-02  3.592e-02  8.602e+03  -1.163 0.244979    
+Block1:ImagePair128 -4.951e-02  3.788e-02  8.602e+03  -1.307 0.191270    
+Block1:ImagePair129 -6.577e-03  3.655e-02  8.602e+03  -0.180 0.857205    
+Block1:ImagePair130 -1.610e-02  3.594e-02  8.602e+03  -0.448 0.654133    
+Block1:ImagePair131  4.935e-02  3.653e-02  8.602e+03   1.351 0.176793    
+Block1:ImagePair132 -8.108e-03  3.623e-02  8.602e+03  -0.224 0.822916    
+Block1:ImagePair133  2.129e-02  3.600e-02  8.602e+03   0.591 0.554257    
+Block1:ImagePair134  8.020e-04  3.673e-02  8.602e+03   0.022 0.982580    
+Block1:ImagePair135 -1.116e-01  3.563e-02  8.602e+03  -3.131 0.001748 ** 
+Block1:ImagePair136 -7.484e-02  3.655e-02  8.602e+03  -2.047 0.040652 *  
+Block1:ImagePair137  2.082e-02  3.592e-02  8.602e+03   0.580 0.562163    
+Block1:ImagePair138  7.564e-02  3.594e-02  8.602e+03   2.105 0.035362 *  
+Block1:ImagePair139  5.157e-02  3.563e-02  8.602e+03   1.447 0.147851    
+Block1:ImagePair140  4.964e-02  3.860e-02  8.602e+03   1.286 0.198434    
+Block1:ImagePair141  6.766e-02  3.623e-02  8.602e+03   1.868 0.061838 .  
+Block1:ImagePair142 -1.635e-02  3.623e-02  8.602e+03  -0.451 0.651834    
+Block1:ImagePair143  1.426e-01  3.627e-02  8.602e+03   3.932 8.49e-05 ***
+Block1:ImagePair144  3.508e-02  3.627e-02  8.602e+03   0.967 0.333501    
+Block1:ImagePair145  7.242e-02  3.656e-02  8.602e+03   1.981 0.047595 *  
+Block1:ImagePair146  2.062e-01  3.600e-02  8.602e+03   5.728 1.05e-08 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> print("*************************** Fixed Effect Coeff. ************************")
+[1] "*************************** Fixed Effect Coeff. ************************"
+
+> fixef(LMM_BIM_invRT)
+        (Intercept)              Block1          ImagePair1          ImagePair2          ImagePair3          ImagePair4 
+       1.4553629838        0.0297929954       -0.1728637801       -0.0971731507       -0.0004252168       -0.0187206014 
+         ImagePair5          ImagePair6          ImagePair7          ImagePair8          ImagePair9         ImagePair10 
+       0.0804839569        0.0759990773        0.1231115084       -0.2004107238        0.0997007435        0.1227920156 
+        ImagePair11         ImagePair12         ImagePair13         ImagePair14         ImagePair15         ImagePair16 
+      -0.0251865209        0.0869999944       -0.1835103426       -0.0003780407       -0.1035347211       -0.0789437784 
+        ImagePair17         ImagePair18         ImagePair19         ImagePair20         ImagePair21         ImagePair22 
+      -0.1352730713        0.0947900537        0.1455035207       -0.0491337971       -0.0481410604       -0.0726589739 
+        ImagePair23         ImagePair24         ImagePair25         ImagePair26         ImagePair27         ImagePair28 
+      -0.0599027187       -0.1031039443       -0.0907396183       -0.0267967303       -0.0095543834       -0.0357384248 
+        ImagePair29         ImagePair30         ImagePair31         ImagePair32         ImagePair33         ImagePair34 
+      -0.0186658991       -0.0564661759        0.0431794803       -0.0316057393       -0.0111162079        0.1792239616 
+        ImagePair35         ImagePair36         ImagePair37         ImagePair38         ImagePair39         ImagePair40 
+       0.0932270633        0.0321261566       -0.0098162695       -0.0437875167        0.1738840806        0.1307387349 
+        ImagePair41         ImagePair42         ImagePair43         ImagePair44         ImagePair45         ImagePair46 
+       0.0070031316       -0.0424288905        0.1087956108       -0.0786753453       -0.0530886949       -0.0491395138 
+        ImagePair47         ImagePair48         ImagePair49         ImagePair50         ImagePair51         ImagePair52 
+      -0.0362195749        0.0639944168       -0.0215666058       -0.1125624732       -0.1790104466        0.0243216259 
+        ImagePair53         ImagePair54         ImagePair55         ImagePair56         ImagePair57         ImagePair58 
+       0.1179921057        0.0304114130       -0.0022660806        0.0125837159       -0.0309526219       -0.0898573741 
+        ImagePair59         ImagePair60         ImagePair61         ImagePair62         ImagePair63         ImagePair64 
+      -0.0798010902        0.0301879543        0.1587370266       -0.0459991301       -0.0292093523        0.0361064900 
+        ImagePair65         ImagePair66         ImagePair67         ImagePair68         ImagePair69         ImagePair70 
+      -0.0793750707        0.1119640512        0.0609942326       -0.0437415078        0.0866632540       -0.0109258533 
+        ImagePair71         ImagePair72         ImagePair73         ImagePair74         ImagePair75         ImagePair76 
+      -0.0155577022       -0.0920703606        0.0098705295        0.0807007991       -0.1448865370        0.0398394275 
+        ImagePair77         ImagePair78         ImagePair79         ImagePair80         ImagePair81         ImagePair82 
+       0.0160736785       -0.0315862670        0.1035713762        0.1011624279        0.0367345629        0.0269603491 
+        ImagePair83         ImagePair84         ImagePair85         ImagePair86         ImagePair87         ImagePair88 
+      -0.1388640423        0.0090907514        0.1300224578        0.0529913754        0.0101077586        0.0242207419 
+        ImagePair89         ImagePair90         ImagePair91         ImagePair92         ImagePair93         ImagePair94 
+       0.0075565392        0.0483888931       -0.1084212093       -0.2985549897        0.0334880969       -0.0185744233 
+        ImagePair95         ImagePair96         ImagePair97         ImagePair98         ImagePair99        ImagePair100 
+      -0.1160182980        0.0820864454        0.0100070587        0.0026629484       -0.0771255464        0.1126630930 
+       ImagePair101        ImagePair102        ImagePair103        ImagePair104        ImagePair105        ImagePair106 
+       0.0421915293        0.1274046826        0.1312610156        0.0496510508        0.0815018805        0.1005339628 
+       ImagePair107        ImagePair108        ImagePair109        ImagePair110        ImagePair111        ImagePair112 
+       0.0751762893       -0.0683309983        0.1343451881        0.1303399110        0.1088227618        0.1881990157 
+       ImagePair113        ImagePair114        ImagePair115        ImagePair116        ImagePair117        ImagePair118 
+       0.1455551077        0.1627221521        0.1912973281        0.0753482210        0.0220116450        0.0492921864 
+       ImagePair119        ImagePair120        ImagePair121        ImagePair122        ImagePair123        ImagePair124 
+       0.1346449045        0.1435718289        0.0019839088        0.0268313609       -0.0401203119        0.0892778728 
+       ImagePair125        ImagePair126        ImagePair127        ImagePair128        ImagePair129        ImagePair130 
+       0.0750828056       -0.0124538340       -0.0154614497        0.0351076390       -0.0676648457        0.0002772245 
+       ImagePair131        ImagePair132        ImagePair133        ImagePair134        ImagePair135        ImagePair136 
+       0.1038897131       -0.0986163552        0.0923498450        0.0254838204       -0.1394158327       -0.2743317706 
+       ImagePair137        ImagePair138        ImagePair139        ImagePair140        ImagePair141        ImagePair142 
+      -0.0257403848        0.0719761199       -0.1728826239       -0.1260361081       -0.0687047361       -0.1962789493 
+       ImagePair143        ImagePair144        ImagePair145        ImagePair146   Block1:ImagePair1   Block1:ImagePair2 
+      -0.1400743080       -0.2467768169       -0.1306732193       -0.1284283707        0.0905843539        0.0399823671 
+  Block1:ImagePair3   Block1:ImagePair4   Block1:ImagePair5   Block1:ImagePair6   Block1:ImagePair7   Block1:ImagePair8 
+       0.0367254177        0.0952052565        0.0169578588        0.0126675319        0.0344031726        0.0794949096 
+  Block1:ImagePair9  Block1:ImagePair10  Block1:ImagePair11  Block1:ImagePair12  Block1:ImagePair13  Block1:ImagePair14 
+      -0.0865501555       -0.0140570747        0.0033086311        0.0883606427        0.1743811497       -0.0350293029 
+ Block1:ImagePair15  Block1:ImagePair16  Block1:ImagePair17  Block1:ImagePair18  Block1:ImagePair19  Block1:ImagePair20 
+      -0.0550353252       -0.0958847781        0.0213587385       -0.0462362422        0.0138222078        0.0327988824 
+ Block1:ImagePair21  Block1:ImagePair22  Block1:ImagePair23  Block1:ImagePair24  Block1:ImagePair25  Block1:ImagePair26 
+       0.1824725621       -0.0090455770       -0.0267734700       -0.1104419356       -0.1604096071       -0.1493400886 
+ Block1:ImagePair27  Block1:ImagePair28  Block1:ImagePair29  Block1:ImagePair30  Block1:ImagePair31  Block1:ImagePair32 
+       0.0809822955        0.1452129442        0.0520085905       -0.0139557997        0.0220644580        0.1077958061 
+ Block1:ImagePair33  Block1:ImagePair34  Block1:ImagePair35  Block1:ImagePair36  Block1:ImagePair37  Block1:ImagePair38 
+      -0.0700080108        0.0224079137       -0.0829704386       -0.0743514265        0.0953818219        0.0162553132 
+ Block1:ImagePair39  Block1:ImagePair40  Block1:ImagePair41  Block1:ImagePair42  Block1:ImagePair43  Block1:ImagePair44 
+      -0.0258078707       -0.0362491715       -0.1088195619       -0.0655926249       -0.0356449604       -0.0343516907 
+ Block1:ImagePair45  Block1:ImagePair46  Block1:ImagePair47  Block1:ImagePair48  Block1:ImagePair49  Block1:ImagePair50 
+      -0.0505239879        0.0164717627        0.0198087559       -0.1179561678        0.0574224900       -0.0428444673 
+ Block1:ImagePair51  Block1:ImagePair52  Block1:ImagePair53  Block1:ImagePair54  Block1:ImagePair55  Block1:ImagePair56 
+       0.0851106882       -0.0149237487       -0.0026365401       -0.0615824012        0.0416848730       -0.0098952829 
+ Block1:ImagePair57  Block1:ImagePair58  Block1:ImagePair59  Block1:ImagePair60  Block1:ImagePair61  Block1:ImagePair62 
+       0.0641281626        0.1098075482        0.0461483501       -0.0598435783       -0.0253286889       -0.0354606457 
+ Block1:ImagePair63  Block1:ImagePair64  Block1:ImagePair65  Block1:ImagePair66  Block1:ImagePair67  Block1:ImagePair68 
+      -0.0383662876        0.0920866963        0.0203487800        0.0101465511        0.0316697068        0.0296322344 
+ Block1:ImagePair69  Block1:ImagePair70  Block1:ImagePair71  Block1:ImagePair72  Block1:ImagePair73  Block1:ImagePair74 
+      -0.0031752233        0.0574439950        0.0711648744        0.0939739117       -0.0211400677        0.0411541989 
+ Block1:ImagePair75  Block1:ImagePair76  Block1:ImagePair77  Block1:ImagePair78  Block1:ImagePair79  Block1:ImagePair80 
+      -0.0255436399        0.0682615402       -0.0453869980       -0.0377304571        0.0127349112       -0.0400525378 
+ Block1:ImagePair81  Block1:ImagePair82  Block1:ImagePair83  Block1:ImagePair84  Block1:ImagePair85  Block1:ImagePair86 
+       0.1206686935        0.0394092928       -0.0524092339        0.0229789587        0.0114150405        0.0103406556 
+ Block1:ImagePair87  Block1:ImagePair88  Block1:ImagePair89  Block1:ImagePair90  Block1:ImagePair91  Block1:ImagePair92 
+      -0.0263632913        0.0834326423        0.1172655977       -0.0891774348       -0.1547518745       -0.0925108728 
+ Block1:ImagePair93  Block1:ImagePair94  Block1:ImagePair95  Block1:ImagePair96  Block1:ImagePair97  Block1:ImagePair98 
+       0.0414174968       -0.0598481697       -0.0462864080        0.0184096722       -0.0217250817        0.0115869603 
+ Block1:ImagePair99 Block1:ImagePair100 Block1:ImagePair101 Block1:ImagePair102 Block1:ImagePair103 Block1:ImagePair104 
+       0.0007460828       -0.1068669824       -0.0410344909       -0.0741761605        0.0378545834       -0.0529406258 
+Block1:ImagePair105 Block1:ImagePair106 Block1:ImagePair107 Block1:ImagePair108 Block1:ImagePair109 Block1:ImagePair110 
+      -0.0856554752       -0.0373927939       -0.0892865385       -0.1053656097       -0.0596015259       -0.0028082374 
+Block1:ImagePair111 Block1:ImagePair112 Block1:ImagePair113 Block1:ImagePair114 Block1:ImagePair115 Block1:ImagePair116 
+       0.0841182316       -0.0179552780       -0.0437900457        0.0237151450       -0.0867933828        0.0194487327 
+Block1:ImagePair117 Block1:ImagePair118 Block1:ImagePair119 Block1:ImagePair120 Block1:ImagePair121 Block1:ImagePair122 
+       0.0477032722       -0.0152398477       -0.0592858792       -0.0140112057       -0.0383985606       -0.0380714664 
+Block1:ImagePair123 Block1:ImagePair124 Block1:ImagePair125 Block1:ImagePair126 Block1:ImagePair127 Block1:ImagePair128 
+      -0.1145115498       -0.0973509363       -0.0227669303        0.0245834776       -0.0417678387       -0.0495055702 
+Block1:ImagePair129 Block1:ImagePair130 Block1:ImagePair131 Block1:ImagePair132 Block1:ImagePair133 Block1:ImagePair134 
+      -0.0065772724       -0.0161029580        0.0493474988       -0.0081083737        0.0212909423        0.0008019855 
+Block1:ImagePair135 Block1:ImagePair136 Block1:ImagePair137 Block1:ImagePair138 Block1:ImagePair139 Block1:ImagePair140 
+      -0.1115622207       -0.0748409382        0.0208216886        0.0756376535        0.0515680103        0.0496418017 
+Block1:ImagePair141 Block1:ImagePair142 Block1:ImagePair143 Block1:ImagePair144 Block1:ImagePair145 Block1:ImagePair146 
+       0.0676597422       -0.0163465059        0.1426085563        0.0350785710        0.0724248058        0.2062248369 
+
+> #confint(LMM_BIM_invRT)
+> print("*************************** Random Effect Coeff. ************************")
+[1] "*************************** Random Effect Coeff. ************************"
+
+> ranef(LMM_BIM_invRT)
+$Subject
+    (Intercept)
+1   0.099497936
+2   0.058236628
+3   0.005700536
+4  -0.180501444
+5   0.130247941
+6  -0.067958671
+7  -0.073810269
+8  -0.096235326
+9  -0.051580751
+10  0.230676952
+11  0.070515086
+12 -0.113632379
+13  0.157289501
+14  0.074034356
+15 -0.161005659
+16 -0.081474439
+
+with conditional variances for “Subject” 
+
+> sink(file=NULL)
