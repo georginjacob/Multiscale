@@ -28,7 +28,7 @@ This folder contains the R codes used find the statistical significance.
 **Exp01_BlockwiseSameDifferent_HierarchicalShapes**
 
 
-## 2.1 Exp01_BlockwiseSameDifferent_HierarchicalShapes ##
+### 2.1 Exp01_BlockwiseSameDifferent_HierarchicalShapes ###
  **FIG_XX.R** : R codes to check the statistical significance of the effect. There is a separate code for each subpanel. 
  
  **FIG_SX.pdf** : R generated pdf files for supplimentary figure-1
@@ -39,7 +39,7 @@ This folder contains the R codes used find the statistical significance.
  
  **create_data_csv_EXP_01_SD.m** : Matlab code to generate the csv file from the L2_SD.mat (Consolidated experimental data of Exp-01)
  
- ## 2.1 Exp02_VisualSearch_HierarchicalShapes ##
+### 2.2 Exp02_VisualSearch_HierarchicalShapes ###
  
 **FigurXX.R** : Rcodes to check the statistical significance of the effects in exp02. There are separate codes for each panel. 
 
