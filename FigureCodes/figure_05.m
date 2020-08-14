@@ -86,7 +86,7 @@ xlabel('Large Scale');ylabel('Cross Scale Within')
 % Dummy Shapes 
 N_Shapes=7;Shapes={};
 for i=0:N_Shapes-1
-    file_name=['./dummy_shapes/L',num2str(i),'.jpg'];
+    file_name=['./figure5d/L',num2str(i),'.jpg'];
     Shapes{i+1}=imresize(rgb2gray(imread(file_name)),[700,700]);
 end
 figure;
