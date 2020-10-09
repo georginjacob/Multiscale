@@ -1,6 +1,13 @@
 # Readme #
-This repository contains the matlab codes to create the figures and the R codes to report the statictical significance in the manuscript "How the forest interacts with the trees: Multiscale shape integration explains global and local processing" 
-by Georgin Jacob and S. P. Arun, Indian Isntitute of Science, Bangalore, INDIA.
+This repository contains the codes to replicate the figures and the statictical test used in our behavioral work about shapes at multiple scales.
+
+Citation 
+Jacob G & Arun SP (2020) How the forest interacts with the trees: Multiscale shape integration explains global and local processing. Journal of Vision, in press.
+
+
+BioRxiv : https://doi.org/10.1101/777110
+
+OSF     : https://osf.io/zt8k3/
 
 ## 1. Figure Code ##
 
