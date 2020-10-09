@@ -1,4 +1,4 @@
-# Readme #
+# Multiscale Shape Processing 
 This repository contains the codes to replicate the figures and the statictical tests of our behavioral work about shapes at multiple scales.
 
 Jacob G & Arun SP (2020) How the forest interacts with the trees: Multiscale shape integration explains global and local processing. Journal of Vision (in press).
